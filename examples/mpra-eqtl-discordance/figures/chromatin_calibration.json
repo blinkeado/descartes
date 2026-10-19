@@ -1,0 +1,48 @@
+{
+  "n_dav": 40,
+  "n_null": 40,
+  "primary_config": "q_neural_emb",
+  "alpha": 0.05,
+  "configs": {
+    "q_all": {
+      "dav_median": 0.9867,
+      "null_median": 0.9887,
+      "null_p95": 0.9995,
+      "auc": 0.4722,
+      "p_value": 0.6685,
+      "n_exceed_null_p95": 2,
+      "significant": false
+    },
+    "q_neural": {
+      "dav_median": 0.9639,
+      "null_median": 0.9436,
+      "null_p95": 0.9985,
+      "auc": 0.5406,
+      "p_value": 0.5317,
+      "n_exceed_null_p95": 1,
+      "significant": false
+    },
+    "q_cortex": {
+      "dav_median": 0.9463,
+      "null_median": 0.8897,
+      "null_p95": 0.9955,
+      "auc": 0.5641,
+      "p_value": 0.324,
+      "n_exceed_null_p95": 2,
+      "significant": false
+    },
+    "q_neural_emb": {
+      "dav_median": 0.9204,
+      "null_median": 0.8261,
+      "null_p95": 0.9958,
+      "auc": 0.5756,
+      "p_value": 0.2443,
+      "n_exceed_null_p95": 2,
+      "significant": false
+    }
+  },
+  "chromatin_supported_count": 0,
+  "auc": 0.5756,
+  "p_value": 0.2443,
+  "n_exceed_null_p95": 2
+}

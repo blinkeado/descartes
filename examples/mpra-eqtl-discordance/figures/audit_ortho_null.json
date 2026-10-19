@@ -1,0 +1,37 @@
+{
+  "library": 15911,
+  "mapped": 13884,
+  "discordant": {
+    "hit": 40,
+    "n": 79,
+    "rate": 0.5063291139240507
+  },
+  "concordant": {
+    "hit": 49,
+    "n": 66,
+    "rate": 0.7424242424242424
+  },
+  "matched_null_active": {
+    "hit": 4440,
+    "n": 6878,
+    "rate": 0.6455364931666182
+  },
+  "whole_lib_bg": {
+    "hit": 9029,
+    "n": 13884,
+    "rate": 0.6503169115528666
+  },
+  "P_discordant_less_than_bg": 0.0059070359233404784,
+  "fisher_OR_disc_vs_null": 0.5631785631785632,
+  "fisher_p": 0.012728066945095163,
+  "cooc_iso_tq_given_eqtl": 0.7122374968373113,
+  "cooc_iso_tq_no_eqtl": 0.2881105081401085,
+  "disc_with_eqtl": {
+    "hit": 39,
+    "n": 52
+  },
+  "disc_no_eqtl": {
+    "hit": 1,
+    "n": 27
+  }
+}

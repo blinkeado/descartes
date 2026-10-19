@@ -1,0 +1,10 @@
+{
+  "rho_composite": 0.0489,
+  "ci_lo": -0.1151,
+  "ci_hi": 0.2102,
+  "p_one_tailed": 0.2792,
+  "threshold": 0.25,
+  "passed": false,
+  "rho_collider_plain": -0.1322,
+  "rho_collider_oriented": 0.2602
+}

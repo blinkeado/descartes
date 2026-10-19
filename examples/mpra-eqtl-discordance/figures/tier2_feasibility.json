@@ -1,0 +1,52 @@
+{
+  "n_protective": 5,
+  "n_mr_feasible": 0,
+  "n_coloc_marginal": 1,
+  "candidates": [
+    {
+      "rsid": "rs6489787",
+      "gene": "GATC",
+      "disorder": "SCZ",
+      "source": "eqtl",
+      "stars": 1,
+      "mr_feasible": false,
+      "coloc_marginal": false
+    },
+    {
+      "rsid": "rs2999355",
+      "gene": "PYGL",
+      "disorder": "SCZ",
+      "source": "closest",
+      "stars": 1,
+      "mr_feasible": false,
+      "coloc_marginal": false
+    },
+    {
+      "rsid": "rs757418",
+      "gene": "CACNA1G",
+      "disorder": "SCZ",
+      "source": "closest",
+      "stars": 1,
+      "mr_feasible": false,
+      "coloc_marginal": false
+    },
+    {
+      "rsid": "rs58985250",
+      "gene": "ACYP2",
+      "disorder": "SCZ",
+      "source": "closest",
+      "stars": 1,
+      "mr_feasible": false,
+      "coloc_marginal": false
+    },
+    {
+      "rsid": "rs62485366",
+      "gene": "MRPS33",
+      "disorder": "SCZ",
+      "source": "eqtl",
+      "stars": 1,
+      "mr_feasible": false,
+      "coloc_marginal": true
+    }
+  ]
+}

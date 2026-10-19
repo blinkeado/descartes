@@ -1,0 +1,42 @@
+# This repository publishes a method, never anyone's data or results.
+# Data files are blocked by default: if a new example genuinely needs one,
+# force-add it deliberately rather than loosening these rules.
+
+*.tsv
+*.csv
+*.txt
+*.jsonl
+*.bed
+*.vcf
+*.gz
+*.bz2
+*.zip
+*.h5
+*.h5ad
+*.parquet
+*.xlsx
+*.gb
+*.fasta
+*.fa
+*.bam
+*.bai
+
+data/
+scratch/
+analysis/
+.claude/agent-memory/
+
+# Environments and caches
+__pycache__/
+*.pyc
+.venv/
+venv/
+agenv/
+.ipynb_checkpoints/
+.DS_Store
+
+# Secrets
+.env
+*.key
+*_key
+*token*
