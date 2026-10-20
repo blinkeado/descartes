@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="560" viewBox="0 0 1600 560" role="img" aria-label="The Descartes loop. A coordinator holds the clock and fires the executor, which runs one pass and returns a fixed handoff block; the coordinator also fires a secretary that marks the phases and a doubt auditor that can only kill a doubt. The handoff decides the next tick.">
+<defs><marker id="head" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#424a53"/></marker></defs>
+<rect width="1600" height="560" fill="#ffffff"/>
+<text x="50" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1f2328" text-anchor="start">The Descartes loop</text>
+<text x="379.52" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="23" font-weight="400" fill="#59636e" text-anchor="start">the clock lives outside every agent</text>
+<rect x="50" y="110" width="360" height="140" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+<path d="M 52 124 V 236" stroke="#0550ae" stroke-width="5" stroke-linecap="round"/>
+<text x="80" y="174" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="33" font-weight="600" fill="#1f2328" text-anchor="start">Coordinator</text>
+<text x="80" y="208" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="23" font-weight="400" fill="#59636e" text-anchor="start">holds the clock</text>
+<rect x="620" y="110" width="360" height="140" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+<path d="M 622 124 V 236" stroke="#6639ba" stroke-width="5" stroke-linecap="round"/>
+<text x="650" y="174" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="33" font-weight="600" fill="#1f2328" text-anchor="start">Executor</text>
+<text x="650" y="208" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="23" font-weight="400" fill="#59636e" text-anchor="start">runs one pass</text>
+<rect x="620" y="320" width="360" height="120" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+<path d="M 622 334 V 426" stroke="#1a7f37" stroke-width="5" stroke-linecap="round"/>
+<text x="650" y="374" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="33" font-weight="600" fill="#1f2328" text-anchor="start">Secretary</text>
+<text x="650" y="408" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="23" font-weight="400" fill="#59636e" text-anchor="start">marks the phases</text>
+<rect x="1190" y="320" width="360" height="120" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+<path d="M 1192 334 V 426" stroke="#a40e26" stroke-width="5" stroke-linecap="round"/>
+<text x="1220" y="374" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="33" font-weight="600" fill="#1f2328" text-anchor="start">Doubt auditor</text>
+<text x="1220" y="408" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="23" font-weight="400" fill="#59636e" text-anchor="start">can only kill a doubt</text>
+<rect x="1190" y="110" width="360" height="140" rx="12" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5" stroke-dasharray="7 6"/>
+<text x="1370" y="176" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" font-weight="600" fill="#1f2328" text-anchor="middle">=== LOOP HANDOFF ===</text>
+<text x="1370" y="210" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="23" font-weight="400" fill="#59636e" text-anchor="middle">fixed fields</text>
+<path d="M 410 180 H 610" fill="none" stroke="#424a53" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#head)"/>
+<text x="515" y="164" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="23" font-weight="400" fill="#59636e" text-anchor="middle">fires one pass</text>
+<path d="M 980 180 H 1180" fill="none" stroke="#424a53" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#head)"/>
+<text x="1085" y="164" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="23" font-weight="400" fill="#59636e" text-anchor="middle">returns</text>
+<path d="M 300 250 V 284 H 800 V 310" fill="none" stroke="#424a53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#head)"/>
+<path d="M 300 250 V 284 H 1370 V 310" fill="none" stroke="#424a53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#head)"/>
+<text x="316" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="23" font-weight="400" fill="#59636e" text-anchor="start">also fires</text>
+<path d="M 1550 180 H 1566 V 508 H 160 V 260" fill="none" stroke="#424a53" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8 7" marker-end="url(#head)"/>
+<text x="180" y="492" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="400" fill="#59636e" text-anchor="start">decides the next tick</text>
+</svg>

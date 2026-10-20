@@ -6,6 +6,16 @@ The engine is four markdown files and a protocol. There is nothing to install, n
 
 > **Nothing is believed on the first look.** Every finding must be reproducible from a committed script, re-checked by an independent method before it is trusted, and carried with an explicit confidence. One pass always has errors; the loop exists to sort what can be believed from what cannot. An honest negative is a result — a null is never inflated into a signal.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/figures/workflow-dark.svg">
+    <img src="docs/figures/workflow-light.svg" width="100%"
+         alt="The Descartes loop: a coordinator holds the clock and fires three agents — the executor runs one pass and returns a fixed handoff block, the secretary re-marks the phases on file evidence, and the doubt auditor can only kill a doubt or let it survive. The handoff decides the next tick.">
+  </picture>
+</p>
+
+<p align="center"><sub>Regenerate with <code>node docs/figures/workflow.mjs</code> — the diagram is code, like every figure in this repository.</sub></p>
+
 ---
 
 ## Why this exists
