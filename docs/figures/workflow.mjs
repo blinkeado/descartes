@@ -75,7 +75,7 @@ const THESIS = 'the clock lives outside every agent';
 
 const ACTORS = [
   { x: X[0], y: ROW1, h: NODE_H, accent: 'coord', title: 'Coordinator', sub: 'holds the clock' },
-  { x: X[1], y: ROW1, h: NODE_H, accent: 'exec', title: 'Descartes', sub: 'the executor: one pass' },
+  { x: X[1], y: ROW1, h: NODE_H, accent: 'exec', title: 'Descartes', sub: 'Executor, runs one pass' },
   { x: X[1], y: ROW2, h: CHECK_H, accent: 'sec', title: 'Secretary', sub: 'marks the phases' },
   { x: X[2], y: ROW2, h: CHECK_H, accent: 'aud', title: 'Doubt auditor', sub: 'can only kill a doubt' },
 ];
