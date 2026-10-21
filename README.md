@@ -1,4 +1,4 @@
-# Descartes — *the discards*
+# Descartes (Cartesius)
 
 **A discovery engine for data reuse.** Take public data that already exists, and produce a closed, reproducible finding the original study left open — one hypothesis at a time, with every finding verified real-vs-false before it is believed.
 
@@ -96,7 +96,7 @@ Then pre-register your first ant in `ANT_REGISTRY.md` **before touching any data
 
 **ANT** is the engine. An **ant** is one unit of its work: a single hypothesis taken end to end, pre-registered before the data is touched and closed either positive or negative-diagnostic. One ant at a time — never five half-done.
 
-**Descartes** is the executor's proper name, after *de omnibus dubitandum* — everything must be doubted. In Spanish, *descartes* also reads as **the discards**: what a hand throws away. Both readings are the engine — it doubts everything it produces, and most of what it produces is what it discarded.
+**Descartes** is the executor's proper name, after *de omnibus dubitandum* — everything must be doubted. **Cartesius** is the Latin he published under, and the root of *Cartesian*. There is a second reading the engine earns: in Spanish, *descartes* also means **the discards** — and most of what this engine produces is the part it threw away.
 
 ---
 
