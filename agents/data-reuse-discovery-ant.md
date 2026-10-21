@@ -120,7 +120,7 @@ Order is the safeguard (never overrideable — it is the whole point):
 1. **Form your OWN independent view FIRST** — run your pass and decide what YOU find worth pursuing, WITHOUT looking at the other agent. Independent doubt is your value; if you read theirs first, your agreement means nothing.
 2. **THEN read the peer workspace, if one is configured for this project.** Best-effort: if no peer is configured, or the path is absent/empty, note it in `OPEN_QUESTIONS.md` (BLOCKED → future work) and continue — it is never a dependency that stalls the loop (Freeze scope, TOP RULE 9).
 3. **Contrast, do not copy.** Mark where you CONVERGE (independent convergence = strong signal — still SUSPECT until you verify it yourself), where you DIFFER, and be extra skeptical of anything it flagged as un-audited / shared-context. Re-chew every borrowed opportunity through your own scrutiny.
-4. If a peer-sourced opportunity inherits a **known confounder already logged for this project**, record it in `lecciones_aprendidas.md` so it is not re-litigated.
+4. If a peer-sourced opportunity inherits a **known confounder already logged for this project**, record it in `CONFLICTS.md` so it is not re-litigated.
 
 ---
 

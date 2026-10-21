@@ -23,7 +23,7 @@ BLUE,GREEN,VERM,GRAY="#0072B2","#009E73","#D55E00","#8a9199"; INK="#1b1b1b"
 def tint(hx,a=0.16):
     r,g,b=int(hx[1:3],16),int(hx[3:5],16),int(hx[5:7],16); return (1-a+a*r/255,1-a+a*g/255,1-a+a*b/255)
 fig,ax=plt.subplots(figsize=(15,7.8)); ax.set_xlim(0,15); ax.set_ylim(0,8.2); ax.axis("off")
-fig.suptitle("Data-reuse engine: four hypotheses tested -> four negatives -> one methodological positive",
+fig.suptitle("Data-reuse engine: four ants closed -> four negatives -> one methodological positive",
              fontsize=13.5,fontweight="bold",y=0.99)
 def box(xc,yc,w,h,t,fc,ec,fs=9,bold=False,tc=INK):
     ax.add_patch(FancyBboxPatch((xc-w/2,yc-h/2),w,h,boxstyle="round,pad=0.02,rounding_size=0.09",
@@ -39,17 +39,17 @@ box(1.5,4.2,2.6,1.3,"The MPRA-eQTL\ndiscordance\nr=0.14 (Science 2024)\nLEFT UNE
 # four hypotheses, all negative (middle column)
 xh=6.4
 hyps=[
- (6.9, f"H1 - orthogonal QTL layer\n{disc_hit}/{disc_n} - CIRCULAR (collider)"),
- (5.5, f"H2 - chromatin, 3 methods\nQTL 0 | AUC={auc:.2f} | caQTL {ca_hit}/{ca_n} - NO"),
- (4.1, f"H3 - protective/risk map\n{nprot} candidates ~50:50 | causal {mr}/{nprot} - FALSIFIED"),
- (2.7, f"H4 - episomal context (Inoue)\nrho={rho:.3f} (threshold 0.25) - DOES NOT PASS"),
+ (6.9, f"Ant 1a - orthogonal QTL layer\n{disc_hit}/{disc_n} - CIRCULAR (collider)"),
+ (5.5, f"Ant 1b - protective/risk map\n{nprot} candidates ~50:50 | causal {mr}/{nprot} - FALSIFIED"),
+ (4.1, f"Ant 2 - chromatin, 3 methods\nQTL 0 | AUC={auc:.2f} | caQTL {ca_hit}/{ca_n} - NO"),
+ (2.7, f"Ant 3 - episomal context (Inoue)\nrho={rho:.3f} (threshold 0.25) - DOES NOT PASS"),
 ]
 for y,t in hyps:
     arrow(2.85,4.2,xh-1.35,y,GRAY)
     ec=VERM if y==6.9 else GRAY
     box(xh,y,3.0,0.95,t,tint(ec,0.10),ec,fs=8.6)
 
-# the refutation of H1 uncovers the positive
+# the refutation of ant 1a uncovers the positive
 arrow(7.95,6.9,9.5,6.0,VERM,lw=2.4,lab="its refutation uncovers...")
 box(11.7,5.4,5.0,2.2,
     f"THE METHODOLOGICAL POSITIVE\nCollider bias in QTL-selected MPRAs\n"
@@ -59,12 +59,12 @@ box(11.7,5.4,5.0,2.2,
     tint(GREEN,0.22),GREEN,fs=9.2,bold=True)
 
 # footer note
-ax.text(7.5,0.9,"Four biological hypotheses tested, four honest negatives. The real positive is not a biological answer - "
-        "it is the failure mode that refuting H1 uncovered,\nwith its control (the library's own ambient floor) and its anchor in the selection-bias literature.",
+ax.text(7.5,0.9,"Four ants taken end to end, four honest negatives. The real positive is not a biological answer - "
+        "it is the failure mode that refuting Ant 1a uncovered,\nwith its control (the library's own ambient floor) and its anchor in the selection-bias literature.",
         ha="center",fontsize=9.3,color=INK,
         bbox=dict(boxstyle="round,pad=0.5",facecolor=tint(GREEN,0.08),edgecolor=GREEN,lw=1.2))
 ax.text(0.2,0.12,"Every number from a committed JSON: audit_ortho_null.json - chromatin_calibration.json - ant2_caqtl.json - tier2_feasibility.json - ant3_result.json",
         fontsize=7.4,color="#888",style="italic")
 fig.tight_layout(rect=[0,0.03,1,0.97])
 fig.savefig(OUT,dpi=200,bbox_inches="tight",facecolor="white")
-print(f"wrote {OUT}  (H1 {disc_hit}/{disc_n} circular; H2 AUC={auc:.2f}/caQTL {ca_hit}/{ca_n}; H3 MR {mr}/{nprot}; H4 ρ={rho:.3f}; collider P={Pcoll:.3f})")
+print(f"wrote {OUT}  (1a {disc_hit}/{disc_n} circular; 1b MR {mr}/{nprot}; 2 AUC={auc:.2f}/caQTL {ca_hit}/{ca_n}; 3 ρ={rho:.3f}; collider P={Pcoll:.3f})")

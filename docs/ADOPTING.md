@@ -43,4 +43,4 @@ Fire the executor for one pass. Read the handoff. Fire again. See [`../COORDINAT
 
 ## What does not transfer
 
-The phases are generic; **the domain layer is not.** Phase 7's translation step — turning a table into something that means something in your field — is the part no agent supplies. That is the human's contribution, and the engine is built on the assumption that it exists.
+The phases are generic; **the domain layer is not.** Translating a verified table into a finding that means something in your field is the human's job, not the engine's — and the engine is built on the assumption that someone supplies it.

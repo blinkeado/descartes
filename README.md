@@ -1,4 +1,4 @@
-# Descartes
+# Descartes — *the discards*
 
 **A discovery engine for data reuse.** Take public data that already exists, and produce a closed, reproducible finding the original study left open — one hypothesis at a time, with every finding verified real-vs-false before it is believed.
 
@@ -96,7 +96,7 @@ Then pre-register your first ant in `ANT_REGISTRY.md` **before touching any data
 
 **ANT** is the engine. An **ant** is one unit of its work: a single hypothesis taken end to end, pre-registered before the data is touched and closed either positive or negative-diagnostic. One ant at a time — never five half-done.
 
-**Descartes** is the executor's proper name, after *de omnibus dubitandum* — everything must be doubted.
+**Descartes** is the executor's proper name, after *de omnibus dubitandum* — everything must be doubted. In Spanish, *descartes* also reads as **the discards**: what a hand throws away. Both readings are the engine — it doubts everything it produces, and most of what it produces is what it discarded.
 
 ---
 
@@ -104,7 +104,7 @@ Then pre-register your first ant in `ANT_REGISTRY.md` **before touching any data
 
 - **This is an orchestration pattern with a human in the loop**, not an autonomous research system. The human supplies domain judgement and decides which hypothesis is worth running.
 - **The engine finds nothing by itself.** It tests what it is given and refuses to believe the result too early. Most of its outputs are negatives, and that is the point.
-- **The domain layer does not transfer.** Phase 7 — turning a table into something that means something in your field — is the human's contribution, and the protocol assumes it exists.
+- **Translating a verified table into a finding that means something in your field is the human's job**, not the engine's. The engine closes the loop; it does not know what the result means in your discipline.
 - **Two search passes reduce error; they do not eliminate it.** There could always be a third layer.
 
 ## License
