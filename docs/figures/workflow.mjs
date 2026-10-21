@@ -75,7 +75,7 @@ const THESIS = 'the clock lives outside every agent';
 
 const ACTORS = [
   { x: X[0], y: ROW1, h: NODE_H, accent: 'coord', title: 'Coordinator', sub: 'holds the clock' },
-  { x: X[1], y: ROW1, h: NODE_H, accent: 'exec', title: 'Executor', sub: 'runs one pass' },
+  { x: X[1], y: ROW1, h: NODE_H, accent: 'exec', title: 'Descartes', sub: 'the executor: one pass' },
   { x: X[1], y: ROW2, h: CHECK_H, accent: 'sec', title: 'Secretary', sub: 'marks the phases' },
   { x: X[2], y: ROW2, h: CHECK_H, accent: 'aud', title: 'Doubt auditor', sub: 'can only kill a doubt' },
 ];
@@ -112,7 +112,7 @@ function render(t) {
   };
 
   push(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" `
-    + `role="img" aria-label="The Descartes loop. A coordinator holds the clock and fires the executor, `
+    + `role="img" aria-label="The Descartes loop. A coordinator holds the clock and fires the executor, Descartes, `
     + `which runs one pass and returns a fixed handoff block; the coordinator also fires a secretary that `
     + `marks the phases and a doubt auditor that can only kill a doubt. The handoff decides the next tick.">`);
   push(`<defs><marker id="head" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" `
