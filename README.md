@@ -14,15 +14,13 @@ The engine is four markdown files and a protocol. There is nothing to install, n
   </picture>
 </p>
 
-<p align="center"><sub>Regenerate with <code>node docs/figures/workflow.mjs</code> — the diagram is code, like every figure in this repository.</sub></p>
-
 ---
 
 ## Why this exists
 
 Reanalysis is cheap and getting cheaper, which means the bottleneck is no longer producing a result — it is **trusting one**. An engine that generates findings quickly and cannot catch its own errors just produces plausible-looking output faster than anyone can check it.
 
-So this engine is built around the opposite objective. Its most important output is a **retraction**: in its first end-to-end run, the headline finding turned out to be a design artefact, and the engine is what caught it. See [`examples/mpra-eqtl-discordance`](examples/mpra-eqtl-discordance/).
+So this engine is built around the opposite objective. Its most important output so far is a **retraction**: in its first end-to-end run, the headline finding turned out to be a design artefact, and the engine is what caught it. See [`examples/mpra-eqtl-discordance`](examples/mpra-eqtl-discordance/).
 
 ---
 
@@ -52,7 +50,7 @@ Pre-phase 0 reconnaissance, then seven phases, in [`PROTOCOL.md`](PROTOCOL.md):
 | | Phase | The rule it enforces |
 |---|---|---|
 | 0 | Reconnaissance | Search in two passes — build, then **refute**. Stand on the authors' own stated gap. |
-| 1 | Rationale + hypothesis | Freeze the mechanism and every definition *before* looking (anti-HARKing). |
+| 1 | Rationale + hypothesis | Freeze the mechanism and every definition *before* looking, so the hypothesis cannot be written after the result is known (HARKing). |
 | 2 | Acquisition + verification | **Test the join, not the filename.** Filenames lie. |
 | 3 | Test, model-free first | Reproduce the paper's own number as a sanity light before believing anything. |
 | 4 | Enhancement with SOTA | Verify tools against the live web, never against training memory. |
@@ -105,7 +103,7 @@ Then pre-register your first ant in `ANT_REGISTRY.md` **before touching any data
 - **This is an orchestration pattern with a human in the loop**, not an autonomous research system. The human supplies domain judgement and decides which hypothesis is worth running.
 - **The engine finds nothing by itself.** It tests what it is given and refuses to believe the result too early. Most of its outputs are negatives, and that is the point.
 - **Translating a verified table into a finding that means something in your field is the human's job**, not the engine's. The engine closes the loop; it does not know what the result means in your discipline.
-- **Two search passes reduce error; they do not eliminate it.** There could always be a third layer.
+- **Two search passes reduce error; they do not eliminate it.** A further pass can still surface evidence, or an explanation, that the first two missed.
 
 ## License
 

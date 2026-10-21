@@ -1,6 +1,6 @@
 # Adopting the engine in your own project
 
-The engine is four markdown agent definitions, a protocol document, and nine empty ledgers. There is no package to install and no service to run.
+The engine is three markdown agent definitions, a coordinator contract, a protocol document and nine empty ledgers. There is no package to install and no service to run.
 
 ## 1. Copy the pieces in
 
