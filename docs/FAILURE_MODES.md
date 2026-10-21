@@ -6,11 +6,11 @@ The engine is built around specific, named ways that data reuse goes wrong. Each
 
 | Failure | What it looks like | Guard |
 |---|---|---|
-| **Saturation / max-over-many** | A metric that is high for *everything* — it is measuring nothing. | Compare against a matched null before believing any rate. |
+| **Saturation / max-over-many** | A metric that is high for *everything* is measuring nothing. | Compare against a matched null before believing any rate. |
 | **Orientation / sign flip** | Allele, strand, or effect direction silently inverted. | Be obsessive about orientation. A case that cannot be oriented is AMBIGUOUS, not classified. |
 | **Wrong-key join** | Build mismatch, a biased or depleted column, an ID that does not map. | Test the join on known cases and count matches. Filenames lie. |
 | **Selection that inflates** | The target or the threshold was chosen to produce the result. | Freeze definitions before looking; report what the frozen choice yields. |
-| **Circularity (collider)** | The group was *constructed* on the very layer being tested, so the overlap is guaranteed. | Ask what the group's construction selected for, and compare against the ambient floor — not against zero. |
+| **Circularity (collider)** | The group was *constructed* on the very layer being tested, so the overlap is guaranteed. | Ask what the group's construction selected for, and compare against the ambient floor, not against zero. |
 | **Power confound** | A difference between groups that is really a difference in detection, depth, or efficiency. | The power gate: residualize, condition, matched null, or build the signal orthogonal to power by design. |
 
 The circularity and power failures are the subtle ones, because the number is computed correctly. **A correct number can still be a meaningless one.**

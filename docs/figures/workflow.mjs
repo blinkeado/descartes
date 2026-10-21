@@ -4,7 +4,7 @@
 // THE CLAIM: the clock lives outside every agent, and the loop closes through a
 // fixed contract. Nothing else belongs in this figure. The handoff fields, the
 // seven phases, the two ladders and the nine ledgers are tables in the README
-// and in docs/ — repeating them here costs the legibility and buys nothing.
+// and in docs/. Repeating them here costs the legibility and buys nothing.
 //
 // THE RULES THIS SCRIPT ENFORCES (it exits non-zero rather than emit a figure
 // that breaks them, because the first version of this diagram failed by growing
@@ -163,7 +163,7 @@ function render(t) {
 
   const ratio = W / H;
   if (ratio < MIN_RATIO) warn.push(`aspect ${ratio.toFixed(2)}:1 is squarer than the ${MIN_RATIO}:1 banner minimum`);
-  if (words.length > MAX_WORDS) warn.push(`${words.length} words, budget is ${MAX_WORDS} — cut text, do not grow the canvas`);
+  if (words.length > MAX_WORDS) warn.push(`${words.length} words, budget is ${MAX_WORDS}: cut text, do not grow the canvas`);
 
   return { svg: out.join('\n'), warn, words: words.length };
 }

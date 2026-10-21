@@ -11,10 +11,10 @@ CONFIDENCE moves: <e.g. "F3 SUSPECT→CONFIRMED; F5 → REFUTED (artefact)"  OR 
 STILL SUSPECT/PLAUSIBLE (need another pass): <list finding ids  OR  "none">
 ARTEFACTS caught/retracted: <list  OR  "none">
 RUNG: <1-5> · DRY PASSES at this rung: <k> · CLIMBED this pass: <no  OR  "N→N+1, reason">
-OSCILLATING (flips ≥3): <finding ids + counts  OR  "none">
+OSCILLATING (flips >=3): <finding ids + counts  OR  "none">
 ANT STATUS: <open | closeable-positive | closeable-negative-diagnostic>
 PROPOSED_DEFINITION_UPDATES.md: <N PROPOSED  OR  none>
-NEXT PASS SHOULD: <one of: "VERIFY findings <ids>", "extend to <sub-analysis>", "RECONCILE + close (positive|negative-diagnostic)", "BLOCKED: need <inaccessible data> — future work", "human attention: <one-line reason>">
+NEXT PASS SHOULD: <one of: "VERIFY findings <ids>", "extend to <sub-analysis>", "RECONCILE + close (positive|negative-diagnostic)", "BLOCKED: need <inaccessible data>, future work", "human attention: <one-line reason>">
 === END HANDOFF ===
 ```
 

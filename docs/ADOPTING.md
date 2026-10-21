@@ -20,7 +20,7 @@ This creates `.claude/agent-memory/<agent>/` with the nine headed-but-empty ledg
 
 ## 3. Pick the dataset and find the gap
 
-Phase 0 of [`../PROTOCOL.md`](../PROTOCOL.md). Pick **one** dataset. Mine its own paper. Search in two passes — build, then refute. The gap you want is one the authors themselves reported and did not explain.
+Phase 0 of [`../PROTOCOL.md`](../PROTOCOL.md). Pick **one** dataset. Mine its own paper. Search in two passes: build, then refute. The gap you want is one the authors themselves reported and did not explain.
 
 ## 4. Freeze the hypothesis before touching data
 
@@ -28,7 +28,7 @@ Write the pre-registration into `ANT_REGISTRY.md`: the rationale, the universe, 
 
 ## 5. Start the loop
 
-Fire the executor for one pass. Read the handoff. Fire again. See [`../COORDINATOR.md`](../COORDINATOR.md) — manual firing is a perfectly legitimate heartbeat, and it is how the engine was first run end to end.
+Fire the executor for one pass. Read the handoff. Fire again. See [`../COORDINATOR.md`](../COORDINATOR.md). Manual firing is a perfectly legitimate heartbeat, and it is how the engine was first run end to end.
 
 ---
 
@@ -37,10 +37,10 @@ Fire the executor for one pass. Read the handoff. Fire again. See [`../COORDINAT
 | Decision | Default | Note |
 |---|---|---|
 | Audit cadence `N` | every 3 passes | The auditor is a check, not a participant. |
-| Drought threshold `K` before climbing a rung | 2–3 dry passes | Lower if your rungs are cheap. |
+| Drought threshold `K` before climbing a rung | 2 to 3 dry passes | Lower if your rungs are cheap. |
 | Where analysis scripts live | `analysis/` | The secretary looks there for evidence. |
 | Whether `PROTOCOL.md` needs project phases | usually not | If your domain needs different phases, write your own canonical document; the agents read it in preference to the shipped one. |
 
 ## What does not transfer
 
-The phases are generic; **the domain layer is not.** Translating a verified table into a finding that means something in your field is the human's job, not the engine's — and the engine is built on the assumption that someone supplies it.
+The phases are generic; **the domain layer is not.** Translating a verified table into a finding that means something in your field is the human's job, not the engine's, and the engine is built on the assumption that someone supplies it.

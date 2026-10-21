@@ -1,4 +1,4 @@
-# ANT_status — the process tracked against the canonical workflow
+# ANT_status: the process tracked against the canonical workflow
 
 Checklist source: PROTOCOL.md · Evidence: agent-memory/data-reuse-discovery-ant/ + the project's analysis directory
 Last updated: <date supplied by the parent>
@@ -7,7 +7,7 @@ Last updated: <date supplied by the parent>
 > A phase is marked ✅ only when a file or result backs it. "No evidence" is never ✅.
 
 <!--
-## Ant <id> — <hypothesis in one line>   [status: open | closed-positive | closed-negative-diagnostic]
+## Ant <id>: <hypothesis in one line>   [status: open | closed-positive | closed-negative-diagnostic]
 | Phase | State | Evidence (file/result) | What is missing / note |
 |---|---|---|---|
 | 0 Reconnaissance | ✅/⚠️/❌/⏳ | | |

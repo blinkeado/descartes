@@ -10,10 +10,10 @@ This document is the contract. Everything in it is either a rule written into an
 
 | It is | It is not |
 |---|---|
-| The heartbeat: it decides *when* the next pass runs | A doubter — it never proposes a doubt or a hypothesis |
-| The parser of the `=== LOOP HANDOFF ===` block | A verifier — it never re-grades a finding's confidence |
-| The dispatcher that keeps the three roles from invading each other | A reader of the ledgers — the handoff exists so the driver stays coherent *without* re-reading files (executor §4) |
-| The only role that applies changes to an agent's own definition (executor §14) | An editor of `FINDINGS.md`, `ANT_REGISTRY.md`, `LOOP_LOG.md`, `DOUBT_AUDIT.md` or `ANT_status.md` — those belong to their owners |
+| The heartbeat: it decides *when* the next pass runs | A doubter: it never proposes a doubt or a hypothesis |
+| The parser of the `=== LOOP HANDOFF ===` block | A verifier: it never re-grades a finding's confidence |
+| The dispatcher that keeps the three roles from invading each other | A reader of the ledgers: the handoff exists so the driver stays coherent *without* re-reading files (executor §4) |
+| The only role that applies changes to an agent's own definition (executor §14) | An editor of `FINDINGS.md`, `ANT_REGISTRY.md`, `LOOP_LOG.md`, `DOUBT_AUDIT.md` or `ANT_status.md`, which belong to their owners |
 
 The coordinator can be a human firing passes by hand, or a parent agent session on a timer. The contract is the same either way.
 
@@ -57,15 +57,15 @@ The executor ends every return with this block (executor §10). Each field drive
 |---|---|
 | `ANT` | confirms which ant this pass belonged to |
 | `PASS` · `MODE` | sanity: pass 1 is never final; a VERIFY must exist before any close |
-| `FINDINGS this pass` | nothing — informational |
-| `CONFIDENCE moves` | nothing — the executor owns confidence |
+| `FINDINGS this pass` | nothing, informational |
+| `CONFIDENCE moves` | nothing, the executor owns confidence |
 | `STILL SUSPECT/PLAUSIBLE` | if non-empty, a close is not available yet |
-| `ARTEFACTS caught/retracted` | nothing — informational (a retraction is the engine working) |
+| `ARTEFACTS caught/retracted` | nothing, informational (a retraction is the engine working) |
 | `RUNG` · `DRY PASSES at this rung` · `CLIMBED this pass` | if dry passes are accumulating at one rung with no climb, the next doubt-auditor batch is the check for fabrication (auditor §3.3, §3.6) |
-| `OSCILLATING (flips ≥3)` | surface it to the human: oscillation means the question is underdetermined, and the confidence level alone hides it |
+| `OSCILLATING (flips >=3)` | surface it to the human: oscillation means the question is underdetermined, and the confidence level alone hides it |
 | `ANT STATUS` | `open` → fire another pass · `closeable-positive` / `closeable-negative-diagnostic` → RECONCILE and close |
 | `PROPOSED_DEFINITION_UPDATES.md` | if N > 0, the coordinator reviews the proposals (§7) |
-| `NEXT PASS SHOULD` | the executor's own honest call for the next heartbeat — the default instruction for the next firing |
+| `NEXT PASS SHOULD` | the executor's own honest call for the next heartbeat, and the default instruction for the next firing |
 
 If the block is missing or malformed, that is a failed pass: re-fire with the handoff requirement restated. Do not reconstruct the state by guessing.
 
@@ -77,17 +77,17 @@ If the block is missing or malformed, that is a failed pass: re-fire with the ha
 |---|---|---|
 | Executor | every tick | It is the only role that moves state forward. One pass per invocation, by its own definition. |
 | Secretary | after each pass | Its deliverable is only useful if it is current, and it is cheap: it runs nothing and reads files. |
-| Doubt auditor | every N passes | It is a check, not a participant. Running it every pass would make it part of the rhythm it is supposed to judge from outside — and the costly audit has nothing to audit until several passes exist. |
+| Doubt auditor | every N passes | It is a check, not a participant. Running it every pass would make it part of the rhythm it is supposed to judge from outside, and the costly audit has nothing to audit until several passes exist. |
 | Human director | on a genuine block, on an oscillating finding, on a definition proposal | Judgement, not content (`PROTOCOL.md` decision rule 9). |
 
-**The asymmetry is the coordinator's responsibility to protect.** The auditor can only `KILL` or `SURVIVES`. If the coordinator ever asks it "so what should we doubt instead?", the control is destroyed — its incentive becomes the executor's, and two doubters that share a failure mode validate each other. That is theatre, not a check. The reason the pairing works is that the executor fails by fabricating doubts and the auditor fails by over-pruning them: opposite failure modes contain each other.
+**The asymmetry is the coordinator's responsibility to protect.** The auditor can only `KILL` or `SURVIVES`. If the coordinator ever asks it "so what should we doubt instead?", the control is destroyed: its incentive becomes the executor's, and two doubters that share a failure mode validate each other. That is theatre, not a check. The reason the pairing works is that the executor fails by fabricating doubts and the auditor fails by over-pruning them: opposite failure modes contain each other.
 
 ---
 
 ## 5. The rules the coordinator cannot break
 
 1. **Do not stop the loop to ask permission**, and do not stop to confirm an intermediate finding. The loop stops only on a genuine block: data that is inaccessible, or something only the human knows.
-2. **One ant at a time.** When an ant closes, generate the next one from `OPEN_QUESTIONS.md` — one, never five half-done (`PROTOCOL.md` decision rule 7).
+2. **One ant at a time.** When an ant closes, generate the next one from `OPEN_QUESTIONS.md`: one, never five half-done (`PROTOCOL.md` decision rule 7).
 3. **Never promote a finding.** If the coordinator decides a SUSPECT is good enough, the entire verification protocol is void.
 4. **Never let one role do another's job.** The executor does not schedule; the auditor does not propose; the secretary does not verify science; the coordinator does not doubt.
 5. **A dry pass is a result.** A pass that honestly reports "no gateable doubt remained at this rung, so I climbed" is a successful pass. The coordinator must not treat it as a failure, because pressure to produce is exactly what makes a doubter fabricate.
@@ -102,7 +102,7 @@ If the block is missing or malformed, that is a failed pass: re-fire with the ha
 The coordinator's obligations:
 
 - **Every firing instructs the agent to persist as it goes**, not at the close.
-- **On resume, the first instruction is always "write to disk whatever you already have, before continuing."** When the harness supports sending a message to an existing agent, resuming it preserves its context — use that rather than a cold restart.
+- **On resume, the first instruction is always "write to disk whatever you already have, before continuing."** When the harness supports sending a message to an existing agent, resuming it preserves its context, so use that rather than a cold restart.
 - **The coordinator creates empty file skeletons.** Some harnesses block writing *new* report-shaped files, so the agents should edit files that already exist. `scripts/bootstrap.sh` creates the empty ledgers for exactly this reason.
 
 ---
@@ -122,18 +122,18 @@ The coordinator **rejects** any proposal that weakens a TOP RULE, grants an agen
 | `ANT STATUS: closeable-*` and `OPEN_QUESTIONS.md` is empty | Stop and report: the queue is genuinely empty. |
 | `NEXT PASS SHOULD: BLOCKED: need <inaccessible data>` | Stop that ant, record it as future work, open the next one. Do not estimate around missing data. |
 | `NEXT PASS SHOULD: human attention: <reason>` | Stop and surface it. |
-| A finding at `flips ≥ 3` | Keep looping, but surface it — the engine is oscillating on an underdetermined question. |
+| A finding at `flips >= 3` | Keep looping, but surface it: the engine is oscillating on an underdetermined question. |
 | The auditor kills more than half a batch | Surface it as possible over-pruning (auditor §5), not as an executor failure. |
 | Drought at a rung with no climb, several passes running | Let the next audit rule on it. Fabrication is the one failure this engine cannot survive. |
 
-A dry pass is never a stopping condition. Running out of doubt at one rung means the boundary of that rung's frame was reached — not the truth.
+A dry pass is never a stopping condition. Running out of doubt at one rung means the boundary of that rung's frame was reached, not the truth.
 
 ---
 
 ## 9. Scale and cost
 
 - **A few delegations per tick is subagent territory**, and that is the right shape for one ant with three roles.
-- **Dozens or hundreds of agents ranking hypotheses is workflow-script territory** — move the orchestration out of the conversation's context. Do not reach for the heavy tool for what the light one does better.
+- **Dozens or hundreds of agents ranking hypotheses is workflow-script territory**: move the orchestration out of the conversation's context. Do not reach for the heavy tool for what the light one does better.
 - Agent-to-agent conversation is not free: the coordinator carries history into every call, so cost grows with roles × rounds. One well-structured session beats several badly coordinated agents.
 - Do not build the plumbing. The methodology is the value; the harness already exists.
 
