@@ -90,6 +90,14 @@ Then pre-register your first ant in `ANT_REGISTRY.md` **before touching any data
 
 ---
 
+## Workflow definitions and research records
+
+`agents/`, `COORDINATOR.md`, `PROTOCOL.md`, `commands/` and `docs/` define how the workflow is intended to operate. The files in `templates/` are empty starting points. A run's own records are needed to establish which instructions were used, what happened, and what was corrected.
+
+Record the exact engine commit and any project-specific instructions for each run. Workflow definitions can be shared publicly while research records are shared separately with controlled access. Preserve original records and identify any anonymized copies. See [`docs/SHARING.md`](docs/SHARING.md).
+
+---
+
 ## Glossary
 
 **ANT** is the engine. An **ant** is one unit of its work: a single hypothesis taken end to end, pre-registered before the data is touched and closed either positive or negative-diagnostic. One ant at a time, never five half-done.

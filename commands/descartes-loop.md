@@ -20,12 +20,12 @@ Target for this tick: $ARGUMENTS
 4. **Every 3 passes, fire the doubt auditor** (`ant-doubt-auditor`) over the passes since its last audit. It returns KILL/SURVIVES per doubt. Do not ask it what to doubt instead: that destroys the asymmetry that makes it a check.
 5. **Act on `ANT STATUS`:**
    - `open` → next tick fires what `NEXT PASS SHOULD` says.
-   - `closeable-positive` / `closeable-negative-diagnostic` → fire RECONCILE to close it, then open **exactly one** new ant from `OPEN_QUESTIONS.md`.
+   - `closeable-positive` / `closeable-negative-diagnostic` → fire RECONCILE to close it, then open **exactly one** new ant if an eligible question remains in `OPEN_QUESTIONS.md` within the director's authorized scope. Otherwise persist the state and report the close.
 6. **Report the tick in a few lines:** pass number and mode, confidence moves, artefacts retracted, rung and whether it climbed, and what the next tick will fire. Not a tour of everything.
 
 ## What you must not do
 
-- **Do not stop to ask permission** and do not stop to confirm an intermediate finding. Stop only on a genuine block: inaccessible data, or something only the human knows.
+- **Do not stop to ask permission within the authorized scope** and do not stop to confirm an intermediate finding. Persist the state and stop when the director requests it, the agreed scope or resource limit is reached, or a genuine block requires inaccessible data or information only the human knows.
 - **Do not promote a finding yourself.** Confidence belongs to the executor.
 - **Do not doubt, propose hypotheses, or rank the queue.** You dispatch; you do not participate.
 - **Do not run more than one ant.** One exhaustive hypothesis at a time.

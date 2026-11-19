@@ -95,7 +95,7 @@ The deliverable must run from zero for a third party.
 
 - Every number traces to a committed script that reads a named input file. Zero inline, zero hardcode.
 - **Figures read their numbers live from files.** Making a figure read live data is not cosmetic: it is a test, and it routinely exposes a wrong hardcoded value.
-- Map phase → script, and re-run with all derived files deleted.
+- Map phase → script, and re-run into a fresh output directory without reusing derived files. Preserve the archived inputs, outputs and receipts so that the reconstruction can be compared with the original run.
 
 ### Phase 7: Close + translation
 

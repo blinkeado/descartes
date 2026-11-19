@@ -90,13 +90,13 @@ Every number re-derives from a committed script reading a named input.
 
 The analysis scripts and the raw inputs stay in the original analysis repository: the inputs are several hundred megabytes of public QTL tables, and the case study is here to show how the engine behaved, not to re-run the genomics.
 
-**The figures, however, are reproducible from this repository.** [`figures/`](figures/) holds the result JSONs those scripts emitted and the plotting code that reads them, so both figures above regenerate from a file, and no number is typed into a figure:
+**The figures can be redrawn from this repository.** [`figures/`](figures/) holds the archived result JSONs and plotting code. The quantitative panels read those JSONs. Some text annotations, including the `164/164` design statement in `figure_collider_bias.py`, are literals in the plotting source rather than quantities derived from the supplied JSONs. Checking those annotations requires the original analysis records.
 
 ```sh
 cd figures && python3 figure_collider_bias.py && python3 figure_funnel.py
 ```
 
-This is phase 6 in miniature: a figure that carries a literal is a figure nobody can check, and making one read live data is how a wrong hardcoded value gets caught.
+This checks reproduction of the archived plots. It does not rerun the genomic analysis or independently validate the case study's biological interpretations; those require the original analysis scripts and input snapshots described above.
 
 ---
 

@@ -44,8 +44,8 @@ The coordinator can be a human firing passes by hand, or a parent agent session 
 2. **Parse the handoff.** Nothing else in the return is a contract; anything after the block is ignorable.
 3. **Fire the secretary** to re-mark that ant's phases against `PROTOCOL.md` on file evidence.
 4. **Every N passes, fire the doubt auditor** over the passes since its last audit. N is the project's choice; 3 is the value this engine was run with.
-5. **Act on `ANT STATUS`.** If it is `closeable-*`, close the ant and open exactly one new ant from `OPEN_QUESTIONS.md`. If it is `open`, fire the next pass as `NEXT PASS SHOULD` says.
-6. **Repeat.** Do not stop to report intermediate findings or to ask whether to continue (§5).
+5. **Act on `ANT STATUS`.** If it is `closeable-*`, close the ant. Open exactly one new ant from `OPEN_QUESTIONS.md` if an eligible question remains within the director's authorized scope; otherwise stop and report the close. If it is `open`, fire the next pass as `NEXT PASS SHOULD` says.
+6. **Repeat within the authorized scope and limits.** Do not stop to report intermediate findings or to ask whether to continue (§5).
 
 ---
 
@@ -59,7 +59,7 @@ The executor ends every return with this block (executor §10). Each field drive
 | `PASS` · `MODE` | sanity: pass 1 is never final; a VERIFY must exist before any close |
 | `FINDINGS this pass` | nothing, informational |
 | `CONFIDENCE moves` | nothing, the executor owns confidence |
-| `STILL SUSPECT/PLAUSIBLE` | if non-empty, a close is not available yet |
+| `STILL SUSPECT/PLAUSIBLE` | if non-empty, a **positive** close is not available. A **negative-diagnostic** close may retain these items when it identifies what remains unresolved and makes no positive claim about them (`PROTOCOL.md`, confidence model). |
 | `ARTEFACTS caught/retracted` | nothing, informational (a retraction is the engine working) |
 | `RUNG` · `DRY PASSES at this rung` · `CLIMBED this pass` | if dry passes are accumulating at one rung with no climb, the next doubt-auditor batch is the check for fabrication (auditor §3.3, §3.6) |
 | `OSCILLATING (flips >=3)` | surface it to the human: oscillation means the question is underdetermined, and the confidence level alone hides it |
@@ -86,8 +86,8 @@ If the block is missing or malformed, that is a failed pass: re-fire with the ha
 
 ## 5. The rules the coordinator cannot break
 
-1. **Do not stop the loop to ask permission**, and do not stop to confirm an intermediate finding. The loop stops only on a genuine block: data that is inaccessible, or something only the human knows.
-2. **One ant at a time.** When an ant closes, generate the next one from `OPEN_QUESTIONS.md`: one, never five half-done (`PROTOCOL.md` decision rule 7).
+1. **Do not stop the loop to ask permission within its authorized scope**, and do not stop to confirm an intermediate finding. Stop when the director requests it, the agreed scope or resource limit is reached, or a genuine block requires inaccessible data or information only the human knows. Record the reason and the exact recovery point.
+2. **One ant at a time.** When an ant closes, generate the next eligible one from `OPEN_QUESTIONS.md` within the authorized scope: one, never five half-done (`PROTOCOL.md` decision rule 7). If none remains in scope, report the close.
 3. **Never promote a finding.** If the coordinator decides a SUSPECT is good enough, the entire verification protocol is void.
 4. **Never let one role do another's job.** The executor does not schedule; the auditor does not propose; the secretary does not verify science; the coordinator does not doubt.
 5. **A dry pass is a result.** A pass that honestly reports "no gateable doubt remained at this rung, so I climbed" is a successful pass. The coordinator must not treat it as a failure, because pressure to produce is exactly what makes a doubter fabricate.
@@ -119,6 +119,7 @@ The coordinator **rejects** any proposal that weakens a TOP RULE, grants an agen
 
 | Signal | Action |
 |---|---|
+| The director requests a stop, or an agreed scope or resource limit is reached | Persist the current state, record what was completed and what remains, and stop. |
 | `ANT STATUS: closeable-*` and `OPEN_QUESTIONS.md` is empty | Stop and report: the queue is genuinely empty. |
 | `NEXT PASS SHOULD: BLOCKED: need <inaccessible data>` | Stop that ant, record it as future work, open the next one. Do not estimate around missing data. |
 | `NEXT PASS SHOULD: human attention: <reason>` | Stop and surface it. |
@@ -126,7 +127,7 @@ The coordinator **rejects** any proposal that weakens a TOP RULE, grants an agen
 | The auditor kills more than half a batch | Surface it as possible over-pruning (auditor §5), not as an executor failure. |
 | Drought at a rung with no climb, several passes running | Let the next audit rule on it. Fabrication is the one failure this engine cannot survive. |
 
-A dry pass is never a stopping condition. Running out of doubt at one rung means the boundary of that rung's frame was reached, not the truth.
+A dry pass alone does not establish that the question is settled. Running out of doubt at one rung means the boundary of that rung's frame was reached, not the truth. Continue only within the director's authorized scope and limits.
 
 ---
 
