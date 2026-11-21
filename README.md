@@ -1,10 +1,10 @@
 # Descartes (Cartesius)
 
-**A discovery engine for data reuse.** Take public data that already exists, and produce a closed, reproducible finding the original study left open, one hypothesis at a time, with every finding verified real-vs-false before it is believed.
+**A discovery engine for data reuse.** Take public data that already exists, and produce a closed, reproducible finding the original study left open, one hypothesis at a time, with every finding checked by a second, independent method before it is trusted.
 
-The engine is four markdown files and a protocol. There is nothing to install, no service to run, and no framework to learn. The value is not the plumbing. It is the method loaded on top of it.
+The engine is four markdown files and a protocol. There is nothing to install, no service to run, and no framework to learn. The files are not the contribution. The method they carry is.
 
-> **Nothing is believed on the first look.** Every finding must be reproducible from a committed script, re-checked by an independent method before it is trusted, and carried with an explicit confidence. One pass always has errors; the loop exists to sort what can be believed from what cannot. An honest negative is a result, and a null is never inflated into a signal.
+> **Nothing is believed on the first look.** Every finding must be reproducible from a committed script, re-checked by an independent method before it is trusted, and carried with an explicit confidence. A single pass is where the errors are; one look is not enough to trust a result. The loop exists to sort what can be believed from what cannot. An honest negative is a result, and a null is never inflated into a signal.
 
 <p align="center">
   <picture>
@@ -18,7 +18,7 @@ The engine is four markdown files and a protocol. There is nothing to install, n
 
 ## Why this exists
 
-Reanalysis is cheap and getting cheaper, which means the bottleneck is no longer producing a result. It is **trusting one**. An engine that generates findings quickly and cannot catch its own errors just produces plausible-looking output faster than anyone can check it.
+Producing a result from data that already exists costs far less than producing the data did. That moves the hard part: it is no longer getting a number, it is **establishing that the number holds**. An engine that returns findings quickly and cannot catch its own errors produces plausible output faster than anyone can check it.
 
 So this engine is built around the opposite objective. Its most important output so far is a **retraction**: in its first end-to-end run, the headline finding turned out to be a design artefact, and the engine is what caught it. See [`examples/mpra-eqtl-discordance`](examples/mpra-eqtl-discordance/).
 
@@ -26,7 +26,7 @@ So this engine is built around the opposite objective. Its most important output
 
 ## How it works
 
-Four roles, deliberately separated, because **the separation is what produces the self-corrections**. A single agent doing everything shares its blind spot across every layer and has no way to see it.
+Four roles, deliberately separated, because **the separation is what made the self-corrections possible in the one run closed so far**. A single agent doing everything shares its blind spot across every layer and has no way to see it.
 
 | Role | Agent | What it does |
 |---|---|---|
@@ -35,7 +35,7 @@ Four roles, deliberately separated, because **the separation is what produces th
 | **Secretary** | [`ant-status-secretary`](agents/ant-status-secretary.md) | Marks every phase ✅/⚠️/❌/⏳ against the protocol, on file evidence only. Runs nothing. |
 | **Coordinator** | [`COORDINATOR.md`](COORDINATOR.md) + [`/descartes-loop`](commands/descartes-loop.md) | Holds the clock. Fires one pass, parses the handoff, decides what runs next. |
 
-The loop's heartbeat is **external by design**: the executor is forbidden from scheduling itself, so the coordinator is the only piece that sees the clock. A human firing passes by hand is a completely legitimate heartbeat.
+The loop's heartbeat is **external by design**: the executor is forbidden from scheduling itself, so the coordinator is the only piece that sees the clock. A human firing each pass by hand is a valid heartbeat.
 
 ### Why the auditor can only delete
 
